@@ -1,4 +1,4 @@
-package gfg.testing.maths;
+package gfg.testing;
 import com.gfg.practice.maths.PrimeFactors;
 import org.junit.Test;
 
