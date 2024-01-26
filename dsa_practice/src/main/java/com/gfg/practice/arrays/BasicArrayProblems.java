@@ -1,6 +1,7 @@
 package com.gfg.practice.arrays;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class BasicArrayProblems {
     public static int largestElemntInArray(ArrayList<Integer> arr){
@@ -54,4 +55,39 @@ public class BasicArrayProblems {
         }
 
     }
+    public static void rotateArray(int[] A, int k) {
+        int n = A.length;
+        // Adjust k to handle cases where k > n
+        k = k % n;
+
+        // Reverse the entire array
+        reverseArray(A, 0, n - 1);
+        // Reverse the first k elements
+        reverseArray(A, 0, k - 1);
+        // Reverse the remaining elements
+        reverseArray(A, k, n - 1);
+    }
+
+    public static HashMap<Integer,Integer> freqOfArray(int[] A){
+        HashMap<Integer,Integer> hashMap = new HashMap<>() ;
+        int n = A.length ;
+        for (int num : A) {
+            hashMap.put(num, hashMap.getOrDefault(num, 0) + 1);
+        }
+        return hashMap;
+    }
+
+    public static void reverseArray(int[] A, int s, int e) {
+        while (s < e) {
+            int temp = A[s];
+            A[s] = A[e];
+            A[e] = temp;
+            s++;
+            e--;
+        }
+    }
+
+
+
+
 }
